@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+    <link rel="stylesheet" href="style.css" id="linkEstilos">
+    <link rel="stylesheet" href="escuro.css" id="linkEscuro" disabled>
+    
+</head>
+<body>
+    <table>
+        <caption>Resumo do seu pedido, realizado em 20 de junho de 2023</caption>
+        <thead>
+            <tr>
+                <th colspan="6">DESAFIO DA TABELA</th>
+            </tr>
+            <tr>
+                <th>ID DO FUNCIONÁRIO</th>
+                <th>NOME DO FUNCIONÁRIO</th>
+                <th>CARGO</th>
+                <th>EMPRESA</th>
+                <th>E-MAIL</th>
+                <th>POSSUI CRACHÁ?</th>
+            </tr>
+        </thead>
+    <tbody>    
+        <tr>
+            <td>654654654</td>
+            <td>Homem-Aranha</td>
+            <td>Vendedor de tênis</td>
+            <td>Nike</td>
+            <td>amigo_da_vizinhanca@gmail.com</td>
+            <td>SIM</td>
+        </tr>
+        <tr>
+            <td>654654654</td>
+            <td>Hulk</td>
+            <td>Personal Trainer</td>
+            <td>Smart Fit</td>
+            <td>esmagatudo@gmail.com</td>
+            <td>NÃO</td>
+        </tr>
+        <tr>
+            <td>987987987</td>
+            <td>Viúva Negra</td>
+            <td>Cerimonialista</td>
+            <td>iCasei</td>
+            <td>viuvasim_sozinhanunca@gmail.com</td>
+            <td>NÃO</td>
+        </tr>
+        <tr>
+            <td>131321321</td>
+            <td>Homem de Ferro</td>
+            <td>Mecânico</td>
+            <td>Ford</td>
+            <td>madebyferro@gmail.com</td>
+            <td>SIM</td>
+        </tr>
+        <tr>
+            <td>1548559726</td>
+            <td>WandaVision</td>
+            <td>Oftalmologista</td>
+            <td>Óticas Carol</td>
+            <td>feticeira123@gmail.com</td>
+            <td>SIM</td>
+        </tr>
+        <tr>
+            <td>8725545454</td>
+            <td>Loki</td>
+            <td>Professor</td>
+            <td>Senai</td>
+            <td>lokidasideia@gmail.com</td>
+            <td>SIM</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">TOTAL DE FUNCIONÁRIOS</td>
+            <td>6</td>
+        </tr>
+    </tfoot>    
+    </table>
+
+<button type="button" id="botaoEstilos">Remover estilos</button>
+<button type="button" id="botaoEscuro">Tema escuro</button>
+
+
+<script>
+    function removeEstilos() {
+        const linkEstilos = document.querySelector('#linkEstilos');
+        if (linkEstilos.hasAttribute('disabled')){
+            linkEstilos.removeAttribute('disabled');
+            botao.innerHTML = 'Remover estilos'
+        } else {
+            linkEstilos.setAttribute('disabled', '');
+            botao.innerHTML = 'Aplicar estilos'
+        }   
+    }
+
+    const botao = document.querySelector('#botaoEstilos');
+    botao.addEventListener('click', removeEstilos);  
+
+        function temaEscuro(){
+            const linkEscuro = document.querySelector('#linkEscuro');
+            if (linkEscuro.hasAttribute('--dark-color')){
+                linkEscuro.removeAttribute('--dark-color');
+            }else {
+                linkEscuro.setAttribute('--dark-color', '');
+            } 
+        }
+    const escuro = document.querySelector('#linkEscuro');
+    escuro.addEventListener('click', temaEscuro)    
+</script>
+
+</body>
+</html>
+
