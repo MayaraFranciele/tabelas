@@ -1,3 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body{
+    transition: 1s;
+    background-color:var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 150px;
+}
+
 table, tr, td, th {
     border-collapse: collapse;
     padding: 10px;
@@ -5,7 +22,7 @@ table, tr, td, th {
 }
 
 tr:nth-child(odd){
-    background-color: #e5acf3;
+    background-color: #ac6b76;
 }
 
 tr:nth-child(even){
@@ -15,6 +32,7 @@ tr:nth-child(even){
 caption{
     caption-side: bottom;
     margin-top: 20px;
+    color: var(--secundary-color);
 }
 
 td, th{
@@ -27,5 +45,18 @@ td, th{
 
 button{
     padding: 10px;
+    margin: 15px;
+}
+
+:root{
+    --background-color: #fff;
+    --primary-color: #333;
+    --secundary-color: #7400000;
+}
+
+[data-theme="dark"] {
+    --background-color: #010101;
+    --primary-color: #fff;
+    --secundary-color: #fff;
 }
 

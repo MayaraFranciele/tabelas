@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelas</title>
     <link rel="stylesheet" href="style.css" id="linkEstilos">
-    <link rel="stylesheet" href="escuro.css" id="linkEscuro" disabled>
     
 </head>
 <body>
@@ -84,7 +83,7 @@
     </table>
 
 <button type="button" id="botaoEstilos">Remover estilos</button>
-<button type="button" id="botaoEscuro">Tema escuro</button>
+<button type="button" id="botaoEscuro">Mudar tema</button>
 
 
 <script>
@@ -98,20 +97,20 @@
             botao.innerHTML = 'Aplicar estilos'
         }   
     }
-
     const botao = document.querySelector('#botaoEstilos');
-    botao.addEventListener('click', removeEstilos);  
+    botao.addEventListener('click', removeEstilos);
 
-        function temaEscuro(){
-            const linkEscuro = document.querySelector('#linkEscuro');
-            if (linkEscuro.hasAttribute('--dark-color')){
-                linkEscuro.removeAttribute('--dark-color');
-            }else {
-                linkEscuro.setAttribute('--dark-color', '');
-            } 
+    document.querySelector('#botaoEscuro').addEventListener('click', () => {
+        const elRaiz = document.documentElement;
+
+        if (elRaiz.getAttribute('data-theme') === 'light'){
+            elRaiz.setAttribute('data-theme', 'dark');
+            localStorage.setItem('data-theme','dark');
+        }else{
+            elRaiz.setAttribute('data-theme', 'light');
+            localStorage.setItem('data-theme','light');
         }
-    const escuro = document.querySelector('#linkEscuro');
-    escuro.addEventListener('click', temaEscuro)    
+    })    
 </script>
 
 </body>
